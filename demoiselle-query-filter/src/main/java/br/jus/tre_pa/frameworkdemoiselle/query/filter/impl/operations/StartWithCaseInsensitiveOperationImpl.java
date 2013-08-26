@@ -4,14 +4,15 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.apache.commons.lang.StringUtils;
+
 import br.gov.frameworkdemoiselle.util.Strings;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.core.operations.SingularOperation;
 
-public class EndsWithOperationImpl implements SingularOperation {
+public class StartWithCaseInsensitiveOperationImpl implements SingularOperation {
 
 	@Override
 	public <T, X> Predicate execute(CriteriaBuilder cb, Root<T> p, String field, X value) {
-		return !Strings.isEmpty((String) value) ? cb.like(p.<String> get(field), "%".concat((String) value)) : null;
+		return !Strings.isEmpty((String) value) ? cb.like(cb.lower(p.<String> get(field)), StringUtils.lowerCase((String) value).concat("%")) : null;
 	}
-
 }

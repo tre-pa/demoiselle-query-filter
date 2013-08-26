@@ -4,31 +4,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.commons.lang.StringUtils;
-
 import br.gov.frameworkdemoiselle.util.Strings;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.core.operations.SingularOperation;
 
 public class StartWithOperationImpl implements SingularOperation {
 
-	private boolean caseInsensitive;
-
-	public StartWithOperationImpl(boolean caseInsensitive) {
-		super();
-		this.caseInsensitive = caseInsensitive;
-	}
-
 	@Override
 	public <T, X> Predicate execute(CriteriaBuilder cb, Root<T> p, String field, X value) {
-		String v = (String) value;
-
-		if (!Strings.isEmpty(v)) {
-			if (caseInsensitive) {
-				return cb.like(cb.lower(p.<String> get(field)), StringUtils.lowerCase(v.concat("%")));
-			}
-			return cb.like(p.<String> get(field), v.concat("%"));
-		}
-		return null;
+		return !Strings.isEmpty((String) value) ? cb.like(p.<String> get(field), ((String) value).concat("%")) : null;
 	}
 
 }
