@@ -5,12 +5,13 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import br.gov.frameworkdemoiselle.util.Strings;
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.core.operations.SingularOperation;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.operation.SingularOperation;
 
-public class StartWithIgnoreCaseOperationImpl implements SingularOperation<String> {
+public class ContainsOperation implements SingularOperation<String> {
 
 	@Override
 	public <T> Predicate execute(CriteriaBuilder cb, Root<T> p, String field, String value) {
-		return !Strings.isEmpty(value) ? cb.like(cb.lower(p.<String> get(field)), value.concat("%").toLowerCase()) : null;
+		return !Strings.isEmpty(value) ? cb.like(p.<String> get(field), "%".concat(value).concat("%")) : null;
 	}
+
 }
