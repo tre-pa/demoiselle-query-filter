@@ -4,10 +4,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractListQueryCriterion;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractListCriterion;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operation.ListOperation;
 
-public class ListCriterion<X> extends AbstractListQueryCriterion<X> {
+public class ListCriterion<X> extends AbstractListCriterion<X> {
 
 	/**
 	 * 

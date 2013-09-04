@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import br.gov.frameworkdemoiselle.util.Strings;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.annotations.Attribute;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.context.CriteriaContext;
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractQueryCriterion;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractCriterion;
 
 public class AbstractCriterionProduces {
 
@@ -23,7 +23,7 @@ public class AbstractCriterionProduces {
 		return field.getAnnotation(Attribute.class).name();
 	}
 
-	protected <X> void addCriterionToContext(InjectionPoint ip, AbstractQueryCriterion criterion) {
+	protected <X> void addCriterionToContext(InjectionPoint ip, AbstractCriterion criterion) {
 		Class<?> filterClass = ip.getMember().getDeclaringClass();
 		context.put(filterClass, criterion);
 	}

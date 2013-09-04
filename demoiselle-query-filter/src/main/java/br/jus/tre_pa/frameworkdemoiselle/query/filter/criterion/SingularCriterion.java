@@ -4,10 +4,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractSingularQueryCriterion;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractSingularCriterion;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operation.SingularOperation;
 
-public class SingularCriterion<X> extends AbstractSingularQueryCriterion<X> {
+public class SingularCriterion<X> extends AbstractSingularCriterion<X> {
 
 	/**
 	 * 

@@ -5,7 +5,7 @@ import java.util.Collection;
 import javax.enterprise.context.SessionScoped;
 
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.context.CriteriaContext;
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractQueryCriterion;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractCriterion;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
@@ -18,7 +18,7 @@ public class CriteriaContextImpl implements CriteriaContext {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Multimap<Class<?>, AbstractQueryCriterion> cache;
+	private Multimap<Class<?>, AbstractCriterion> cache;
 
 	public CriteriaContextImpl() {
 		super();
@@ -26,12 +26,12 @@ public class CriteriaContextImpl implements CriteriaContext {
 	}
 
 	@Override
-	public void put(Class<?> filterClass, AbstractQueryCriterion criterionClass) {
+	public void put(Class<?> filterClass, AbstractCriterion criterionClass) {
 		this.cache.put(filterClass, criterionClass);
 	}
 
 	@Override
-	public Collection<AbstractQueryCriterion> get(Class<?> filterClass) {
+	public Collection<AbstractCriterion> get(Class<?> filterClass) {
 		return this.cache.get(filterClass);
 	}
 

@@ -9,7 +9,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.context.CriteriaContext;
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractQueryCriterion;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractCriterion;
 
 public class JPAQueryHelper {
 
@@ -18,7 +18,7 @@ public class JPAQueryHelper {
 
 	public <T> Predicate[] getPredicates(CriteriaBuilder cb, Root<T> p, Class<?> filterClass) {
 		List<Predicate> predicates = new ArrayList<Predicate>();
-		for (AbstractQueryCriterion criterion : context.get(filterClass)) {
+		for (AbstractCriterion criterion : context.get(filterClass)) {
 			Predicate predicate = criterion.asPredicate(cb, p);
 			if (predicate != null) {
 				predicates.add(predicate);
