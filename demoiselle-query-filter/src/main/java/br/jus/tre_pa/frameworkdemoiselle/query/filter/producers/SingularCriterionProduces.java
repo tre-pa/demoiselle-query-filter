@@ -5,6 +5,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
 
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.criterion.SingularCriterion;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.enums.OperationType;
+import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractCriterionProduces;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operations.ContainsIgnoreCaseOperation;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operations.ContainsOperation;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operations.EndsWithIgnoreCaseOperation;

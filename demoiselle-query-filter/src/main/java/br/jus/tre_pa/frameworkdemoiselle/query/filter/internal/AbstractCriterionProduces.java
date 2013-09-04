@@ -1,4 +1,4 @@
-package br.jus.tre_pa.frameworkdemoiselle.query.filter.producers;
+package br.jus.tre_pa.frameworkdemoiselle.query.filter.internal;
 
 import java.lang.reflect.Field;
 
@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import br.gov.frameworkdemoiselle.util.Strings;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.annotations.Attribute;
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.context.CriteriaContext;
-import br.jus.tre_pa.frameworkdemoiselle.query.filter.internal.AbstractCriterion;
 
 public class AbstractCriterionProduces {
 
