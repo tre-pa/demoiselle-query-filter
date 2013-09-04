@@ -17,7 +17,7 @@ public class AbstractCriterionProduces {
 
 	protected String getFieldName(InjectionPoint ip) {
 		Field field = (Field) ip.getMember();
-		if (Strings.isEmpty(field.getAnnotation(Attribute.class).name())) {
+		if (!field.isAnnotationPresent(Attribute.class) || Strings.isEmpty(field.getAnnotation(Attribute.class).name())) {
 			return field.getName();
 		}
 		return field.getAnnotation(Attribute.class).name();
