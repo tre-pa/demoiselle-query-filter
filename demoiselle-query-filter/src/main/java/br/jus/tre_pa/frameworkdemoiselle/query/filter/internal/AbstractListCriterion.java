@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operation.ListOperation;
 
-public abstract class AbstractListQueryCriterion<X> extends AbstractQueryCriterion {
+public abstract class AbstractListCriterion<X> extends AbstractCriterion {
 
 	/**
 	 * 
@@ -15,7 +15,7 @@ public abstract class AbstractListQueryCriterion<X> extends AbstractQueryCriteri
 
 	private ListOperation<X> operation;
 
-	public AbstractListQueryCriterion(String field, ListOperation<X> operation) {
+	public AbstractListCriterion(String field, ListOperation<X> operation) {
 		super(field);
 		this.operation = operation;
 	}

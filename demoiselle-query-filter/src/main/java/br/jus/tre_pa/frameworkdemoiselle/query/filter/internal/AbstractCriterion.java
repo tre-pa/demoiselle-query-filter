@@ -6,7 +6,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-public abstract class AbstractQueryCriterion implements Serializable {
+public abstract class AbstractCriterion implements Serializable {
 
 	/**
 	 * 
@@ -15,7 +15,7 @@ public abstract class AbstractQueryCriterion implements Serializable {
 
 	private String field;
 
-	public AbstractQueryCriterion(String field) {
+	public AbstractCriterion(String field) {
 		super();
 		this.field = field;
 	}

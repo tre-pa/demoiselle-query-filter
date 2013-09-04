@@ -2,7 +2,7 @@ package br.jus.tre_pa.frameworkdemoiselle.query.filter.internal;
 
 import br.jus.tre_pa.frameworkdemoiselle.query.filter.operation.SingularOperation;
 
-public abstract class AbstractSingularQueryCriterion<X> extends AbstractQueryCriterion {
+public abstract class AbstractSingularCriterion<X> extends AbstractCriterion {
 
 	/**
 	 * 
@@ -13,7 +13,7 @@ public abstract class AbstractSingularQueryCriterion<X> extends AbstractQueryCri
 
 	private SingularOperation<X> operation;
 
-	public AbstractSingularQueryCriterion(String field, SingularOperation<X> operation) {
+	public AbstractSingularCriterion(String field, SingularOperation<X> operation) {
 		super(field);
 		this.operation = operation;
 	}
