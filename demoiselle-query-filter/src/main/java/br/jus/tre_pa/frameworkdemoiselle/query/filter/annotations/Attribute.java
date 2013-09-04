@@ -10,6 +10,4 @@ import java.lang.annotation.Target;
 @Target(FIELD)
 public @interface Attribute {
 	String name();
-
-	boolean mapped() default false;
 }
