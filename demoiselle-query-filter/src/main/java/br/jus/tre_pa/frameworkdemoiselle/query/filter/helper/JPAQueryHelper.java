@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
