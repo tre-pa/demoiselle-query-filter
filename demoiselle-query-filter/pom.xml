@@ -7,7 +7,7 @@
 
 	<groupId>br.jus.tre_pa.frameworkdemoiselle.query</groupId>
 	<artifactId>demoiselle-query-filter</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name></name>
