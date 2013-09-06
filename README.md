@@ -8,14 +8,15 @@ Utilizando o demoiselle-query-filter
 
 > Em todos os exemplos iremos utilizar a entidade Bookmark como referência.
 
-Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter**
+1. Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter** e injetamos nela um atributo do tipo SingularCriterion. Anotamos com o tipo
+de operação que desejamos realizar que no caso é "valores que iniciar com algo não importando se é caseSensitive" e dizemos qual
+campo da entidade Bookmark a consulta se refere.
+
 
 ```java
 package foo.criteria;
 
 //imports
-
-1.
 
 @QueryFilter
 public class BookmarkQueryFilter extends JPAQueryFilter<Bookmark> {
