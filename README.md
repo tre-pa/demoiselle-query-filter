@@ -15,6 +15,8 @@ package foo.criteria;
 
 //imports
 
+1.
+
 @QueryFilter
 public class BookmarkQueryFilter extends JPAQueryFilter<Bookmark> {
 	
@@ -64,5 +66,9 @@ public class BookmarkListMB extends AbstractListPageBean<Bookmark, Long> {
 }
 ```
 
-
+```xhtml
+	<h:inputText value="#{bookmarkQueryFilter.descriptionCriterion.value}">
+		<p:ajax event="keyup" update="[ID-DO-DATATABLE]"/>
+	</h:inputText
+```
 
