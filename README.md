@@ -8,9 +8,9 @@ Utilizando o demoiselle-query-filter
 
 > Em todos os exemplos iremos utilizar a entidade Bookmark como referência.
 
-1. Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter** e injetamos nela um atributo do tipo SingularCriterion. Anotamos com o tipo
-de operação que desejamos realizar que no caso é "valores que iniciar com algo não importando se é caseSensitive" e dizemos qual
-campo da entidade Bookmark a consulta se refere.
+1. Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter** e injetamos nela um atributo do tipo *SingularCriterion*. Anotamos com o tipo
+de operação que desejamos realizar (**@Predicate(operation=OperationType.START_WITH_IGNORE_CASE)**) que no caso é "valores que iniciar com algo não importando se é caseSensitive" e dizemos qual
+campo da entidade Bookmark (**@Attribute(name="description")**)  a consulta se refere que no caso é o campo *description*.
 
 
 ```java
