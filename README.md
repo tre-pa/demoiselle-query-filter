@@ -8,10 +8,7 @@ Utilizando o demoiselle-query-filter
 
 > Em todos os exemplos iremos utilizar a entidade Bookmark como referência.
 
-1. Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter** e injetamos nela um atributo do tipo *SingularCriterion*. Anotamos com o tipo
-de operação que desejamos realizar (**@Predicate(operation=OperationType.START_WITH_IGNORE_CASE)**) que no caso é "valores que iniciar com algo não importando se é caseSensitive" e dizemos qual
-campo da entidade Bookmark (**@Attribute(name="description")**)  a consulta se refere que no caso é o campo *description*.
-
+1. Primeiramente criamos uma entidade que estende a classe **JPAQueryFilter** e anotamos com a annotation **@QueryFilter**
 
 ```java
 package foo.criteria;
@@ -20,18 +17,32 @@ package foo.criteria;
 
 @QueryFilter
 public class BookmarkQueryFilter extends JPAQueryFilter<Bookmark> {
-	
-	@Inject
-	@Predicate(operation=OperationType.START_WITH_IGNORE_CASE)
-	@Attribute(name="description")
-	private SingularCriterion<String> descriptionCriterion;
-	
-	//Getters and Setters
+	private static final long serialVersionUID = 1L;
 	
 }
 ```
+> A annotation @QueryFilter tornará possivel utilizarmos o bean BookmarkQueryFilter no xhtml via EL.
 
-2. Em seguida injetamos o nosso BookmarkQueryFilter no bean de listagem (BookmarkListMB) e ao invés de utilizarmos o *findAll()* do nosso BC iremos utilizar do BookmarkQueryFilter.
+2. 
+
+```java
+package foo.criteria;
+
+//imports
+
+@QueryFilter
+public class BookmarkQueryFilter extends JPAQueryFilter<Bookmark> {
+	private static final long serialVersionUID = 1L;
+	
+	@Inject
+	@Predicate(operation = OperationType.STARTS_WITH_IGNORE_CASE)
+	@Attribute(name = "description")
+	private SingularCriterion<String> descriptionCriterion;
+	
+	//Getters and Setters	
+}
+
+3. Em seguida injetamos o nosso BookmarkQueryFilter no bean de listagem (BookmarkListMB) e ao invés de utilizarmos o *findAll()* do nosso BC iremos utilizar do BookmarkQueryFilter.
 
 ```java
 @ViewController
