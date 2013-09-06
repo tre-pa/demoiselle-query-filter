@@ -41,7 +41,7 @@ public class BookmarkQueryFilter extends JPAQueryFilter<Bookmark> {
 	
 	//Getters and Setters	
 }
-
+```
 3. Em seguida injetamos o nosso BookmarkQueryFilter no bean de listagem (BookmarkListMB) e ao invés de utilizarmos o *findAll()* do nosso BC iremos utilizar do BookmarkQueryFilter.
 
 ```java
