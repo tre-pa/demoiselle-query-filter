@@ -20,7 +20,7 @@ public class ListCriterion<X> extends AbstractListCriterion<X> {
 
 	@Override
 	public <T> Predicate asPredicate(CriteriaBuilder cb, Root<T> p) {
-		return !getField().isEmpty() && !getValue().isEmpty() ? executeOperation(cb, p) : null;
+		return !getField().isEmpty() && getValue() != null && !getValue().isEmpty() ? executeOperation(cb, p) : null;
 	}
 
 	private <T> Predicate executeOperation(CriteriaBuilder cb, Root<T> p) {
